@@ -63,6 +63,8 @@ class TicTacToeBackends:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
                 res.body = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -88,6 +90,8 @@ class TicTacToeBackends:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
                 res.body = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -118,6 +122,8 @@ class TicTacToeBackends:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
                 res.body = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
