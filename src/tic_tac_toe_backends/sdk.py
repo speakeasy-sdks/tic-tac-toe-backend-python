@@ -3,7 +3,7 @@
 import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from tic_tac_toe_backends import utils
-from tic_tac_toe_backends.models import operations
+from tic_tac_toe_backends.models import errors, operations
 
 class TicTacToeBackends:
     r"""Game Engine API for Tic Tac Toe: Game Engine API for Tic Tac Toe"""
@@ -63,6 +63,8 @@ class TicTacToeBackends:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
                 res.body = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -88,6 +90,8 @@ class TicTacToeBackends:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
                 res.body = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -118,6 +122,8 @@ class TicTacToeBackends:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, '*/*'):
                 res.body = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
