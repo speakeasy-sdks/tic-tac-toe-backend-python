@@ -143,3 +143,11 @@ Based on:
 - Speakeasy CLI 1.68.3 (2.81.1) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v1.12.0] https://pypi.org/project/tic-tac-toe-backend/1.12.0 - .
+
+## 2023-08-08 01:19:43
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.69.1 (2.82.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v1.13.0] https://pypi.org/project/tic-tac-toe-backend/1.13.0 - .
