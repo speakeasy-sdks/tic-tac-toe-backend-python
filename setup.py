@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="tic-tac-toe-backend",
-    version="1.13.0",
+    version="1.14.0",
     author="Shain Lafazan",
     description="Tic Tac Toe Backend Python Client SDK",
     long_description=long_description,
