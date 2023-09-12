@@ -102,7 +102,6 @@ class MoveAfterState:
 
 @dataclasses.dataclass
 class Move:
-    r"""A Move containing the before and after GameStates."""
     after_state: Optional[list[MoveAfterState]] = dataclasses.field(default=None)
     
 

@@ -8,7 +8,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class Version:
-    r"""The package version."""
     version: Optional[str] = dataclasses.field(default=None)
     
 
