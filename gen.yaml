@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.86.0
-  generationVersion: 2.115.2
+  speakeasyVersion: 1.88.0
+  generationVersion: 2.118.1
 generation:
   comments:
     disableComments: false
@@ -14,10 +14,10 @@ generation:
   tagNamespacingDisabled: false
 features:
   python:
-    core: 2.85.5
+    core: 2.85.6
     globalServerURLs: 2.82.0
 python:
-  version: 1.17.4
+  version: 1.17.5
   author: Shain Lafazan
   description: Tic Tac Toe Backend Python Client SDK
   maxMethodParams: 0
