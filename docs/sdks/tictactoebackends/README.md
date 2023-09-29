@@ -73,7 +73,7 @@ from tic_tac_toe_backends.models import shared
 
 s = tic_tac_toe_backends.TicTacToeBackends()
 
-req = 'corrupti'.encode()
+req = 'GjnqQzHiDc'.encode()
 
 res = s.tic_tac_toe_backends.put_games(req)
 
