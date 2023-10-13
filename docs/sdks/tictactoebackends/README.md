@@ -28,6 +28,7 @@ res = s.tic_tac_toe_backends.get_()
 
 if res.body is not None:
     # handle response
+    pass
 ```
 
 
@@ -53,6 +54,7 @@ res = s.tic_tac_toe_backends.get_version()
 
 if res.body is not None:
     # handle response
+    pass
 ```
 
 
@@ -79,6 +81,7 @@ res = s.tic_tac_toe_backends.put_games(req)
 
 if res.body is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

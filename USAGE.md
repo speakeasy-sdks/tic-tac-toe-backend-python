@@ -8,9 +8,10 @@ import tic_tac_toe_backends
 s = tic_tac_toe_backends.TicTacToeBackends()
 
 
-res = s.get_()
+res = s.tic_tac_toe_backends.get_()
 
 if res.body is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
