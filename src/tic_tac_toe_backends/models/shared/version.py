@@ -5,7 +5,6 @@ import dataclasses
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class Version:
     version: Optional[str] = dataclasses.field(default=None)

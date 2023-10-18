@@ -5,4 +5,4 @@
 
 | Field                                                         | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `after_state`                                                 | list[[MoveAfterState](../../models/shared/moveafterstate.md)] | :heavy_minus_sign:                                            | N/A                                                           |
+| `after_state`                                                 | List[[MoveAfterState](../../models/shared/moveafterstate.md)] | :heavy_minus_sign:                                            | N/A                                                           |

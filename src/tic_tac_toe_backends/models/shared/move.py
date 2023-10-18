@@ -3,19 +3,17 @@
 from __future__ import annotations
 import dataclasses
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
 class MoveAfterStateCurrentMark(str, Enum):
     X = 'X'
     O = 'O'
 
 
-
 @dataclasses.dataclass
 class MoveAfterStateGrid:
     cells: Optional[str] = dataclasses.field(default=None)
     
-
 
 
 
@@ -30,13 +28,11 @@ class MoveAfterStatePossibleMovesAfterStateStartingMark(str, Enum):
     O = 'O'
 
 
-
 @dataclasses.dataclass
 class MoveAfterStatePossibleMovesAfterState:
     grid: Optional[MoveAfterStatePossibleMovesAfterStateGrid] = dataclasses.field(default=None)
     starting_mark: Optional[MoveAfterStatePossibleMovesAfterStateStartingMark] = dataclasses.field(default=None)
     
-
 
 
 
@@ -51,7 +47,6 @@ class MoveAfterStatePossibleMovesBeforeStateStartingMark(str, Enum):
     O = 'O'
 
 
-
 @dataclasses.dataclass
 class MoveAfterStatePossibleMovesBeforeState:
     grid: Optional[MoveAfterStatePossibleMovesBeforeStateGrid] = dataclasses.field(default=None)
@@ -62,7 +57,6 @@ class MoveAfterStatePossibleMovesBeforeState:
 class MoveAfterStatePossibleMovesMark(str, Enum):
     X = 'X'
     O = 'O'
-
 
 
 @dataclasses.dataclass
@@ -83,25 +77,23 @@ class MoveAfterStateWinner(str, Enum):
     O = 'O'
 
 
-
 @dataclasses.dataclass
 class MoveAfterState:
     current_mark: Optional[MoveAfterStateCurrentMark] = dataclasses.field(default=None)
     game_not_started: Optional[bool] = dataclasses.field(default=None)
     game_over: Optional[bool] = dataclasses.field(default=None)
     grid: Optional[MoveAfterStateGrid] = dataclasses.field(default=None)
-    possible_moves: Optional[list[MoveAfterStatePossibleMoves]] = dataclasses.field(default=None)
+    possible_moves: Optional[List[MoveAfterStatePossibleMoves]] = dataclasses.field(default=None)
     starting_mark: Optional[MoveAfterStateStartingMark] = dataclasses.field(default=None)
     tie: Optional[bool] = dataclasses.field(default=None)
     winner: Optional[MoveAfterStateWinner] = dataclasses.field(default=None)
-    winning_cells: Optional[list[int]] = dataclasses.field(default=None)
+    winning_cells: Optional[List[int]] = dataclasses.field(default=None)
     
-
 
 
 
 @dataclasses.dataclass
 class Move:
-    after_state: Optional[list[MoveAfterState]] = dataclasses.field(default=None)
+    after_state: Optional[List[MoveAfterState]] = dataclasses.field(default=None)
     
 

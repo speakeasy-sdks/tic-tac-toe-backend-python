@@ -11,7 +11,6 @@ class MoveParameterMove(str, Enum):
     MINIMAX = 'minimax'
 
 
-
 @dataclasses.dataclass
 class MoveParameter:
     cell_index: Optional[int] = dataclasses.field(default=None)
