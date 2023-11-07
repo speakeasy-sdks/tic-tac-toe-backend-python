@@ -20,11 +20,10 @@ Game Engine API for Tic Tac Toe: Game Engine API for Tic Tac Toe
 ```python
 import tic_tac_toe_backends
 
-
 s = tic_tac_toe_backends.TicTacToeBackends()
 
 
-res = s.tic_tac_toe_backends.get_()
+res = s.get_()
 
 if res.body is not None:
     # handle response
@@ -46,11 +45,10 @@ if res.body is not None:
 ```python
 import tic_tac_toe_backends
 
-
 s = tic_tac_toe_backends.TicTacToeBackends()
 
 
-res = s.tic_tac_toe_backends.get_version()
+res = s.get_version()
 
 if res.body is not None:
     # handle response
@@ -75,9 +73,9 @@ from tic_tac_toe_backends.models import shared
 
 s = tic_tac_toe_backends.TicTacToeBackends()
 
-req = 'GjnqQzHiDc'.encode()
+req = '0x8BCDbF9B8f'.encode()
 
-res = s.tic_tac_toe_backends.put_games(req)
+res = s.put_games(req)
 
 if res.body is not None:
     # handle response
