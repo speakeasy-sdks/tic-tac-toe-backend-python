@@ -34,7 +34,11 @@ if res.body is not None:
 ### Response
 
 **[operations.GetResponse](../../models/operations/getresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_version
 
@@ -59,7 +63,11 @@ if res.body is not None:
 ### Response
 
 **[operations.GetVersionResponse](../../models/operations/getversionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_games
 
@@ -86,10 +94,14 @@ if res.body is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [bytes](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [bytes](../../models/.md)                  | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.PutGamesResponse](../../models/operations/putgamesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

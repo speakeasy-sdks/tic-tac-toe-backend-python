@@ -57,7 +57,33 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import tic_tac_toe_backends
+
+s = tic_tac_toe_backends.TicTacToeBackends()
+
+
+res = None
+try:
+    res = s.get_()
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.body is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -120,7 +146,7 @@ if res.body is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import tic_tac_toe_backends

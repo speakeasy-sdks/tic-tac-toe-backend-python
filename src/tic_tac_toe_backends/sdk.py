@@ -34,15 +34,14 @@ class TicTacToeBackends:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
-        
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, retry_config=retry_config)
        
         
+    
     
     
     
@@ -75,6 +74,7 @@ class TicTacToeBackends:
         return res
 
     
+    
     def get_version(self) -> operations.GetVersionResponse:
         r"""Root endpoint.
         <br/>Returns the package name and version.<br/><br/>
@@ -103,6 +103,7 @@ class TicTacToeBackends:
 
         return res
 
+    
     
     def put_games(self, request: bytes) -> operations.PutGamesResponse:
         r"""Games endpoint. Creates the next game state from the previous game state.

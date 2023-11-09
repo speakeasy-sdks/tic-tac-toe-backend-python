@@ -2,18 +2,18 @@ configVersion: 1.0.0
 management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: tic-tac-toe-backends
   repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-python.git
 features:
   python:
-    core: 4.1.0
+    core: 4.1.2
     globalServerURLs: 2.82.0
 python:
-  version: 3.0.0
+  version: 3.0.1
   author: Shain Lafazan
   clientServerStatusCodesAsErrors: true
   description: Tic Tac Toe Backend Python Client SDK
@@ -26,8 +26,10 @@ python:
       operations: models/operations
       shared: models/shared
       webhooks: models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-python.git
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: tic-tac-toe-backend
   published: true
   repoSubDirectory: .
