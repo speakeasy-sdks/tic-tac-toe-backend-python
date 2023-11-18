@@ -7,6 +7,7 @@ src/tic_tac_toe_backends/utils/__init__.py
 src/tic_tac_toe_backends/utils/retries.py
 src/tic_tac_toe_backends/utils/utils.py
 src/tic_tac_toe_backends/models/errors/sdkerror.py
+tests/helpers.py
 src/tic_tac_toe_backends/models/operations/get_.py
 src/tic_tac_toe_backends/models/operations/get_version.py
 src/tic_tac_toe_backends/models/operations/put_games.py
