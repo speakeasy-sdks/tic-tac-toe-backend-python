@@ -18,7 +18,6 @@ src/tic_tac_toe_backends/models/__init__.py
 src/tic_tac_toe_backends/models/errors/__init__.py
 src/tic_tac_toe_backends/models/operations/__init__.py
 src/tic_tac_toe_backends/models/shared/__init__.py
-USAGE.md
 docs/models/operations/getresponse.md
 docs/models/operations/getversionresponse.md
 docs/models/operations/putgamesresponse.md
@@ -40,4 +39,5 @@ docs/models/shared/move.md
 docs/models/shared/moveparametermove.md
 docs/models/shared/moveparameter.md
 docs/sdks/tictactoebackends/README.md
+USAGE.md
 .gitattributes
