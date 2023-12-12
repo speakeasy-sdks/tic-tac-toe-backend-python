@@ -441,3 +441,13 @@ Based on:
 - [python v3.0.5] .
 ### Releases
 - [PyPI v3.0.5] https://pypi.org/project/tic-tac-toe-backend/3.0.5 - .
+
+## 2023-12-12 01:30:53
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.126.0 (2.213.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v3.1.0] .
+### Releases
+- [PyPI v3.1.0] https://pypi.org/project/tic-tac-toe-backend/3.1.0 - .

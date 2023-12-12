@@ -113,7 +113,7 @@ class TicTacToeBackends:
         
         url = base_url + '/games'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'raw')
+        req_content_type, data, form = utils.serialize_request_body(request, bytes, "request", False, False, 'raw')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
