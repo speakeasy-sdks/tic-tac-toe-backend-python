@@ -1,0 +1,61 @@
+lockVersion: 2.0.0
+id: 23a60c59-3831-4e70-a47d-7ff0550cf744
+management:
+  docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 3.1.1
+  configChecksum: c8e5ed2ff1b9ac1e0f86eb7dca0f90a1
+  repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-python.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-python.git
+  published: true
+features:
+  python:
+    core: 4.4.0
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/tic_tac_toe_backends/sdkconfiguration.py
+  - src/tic_tac_toe_backends/sdk.py
+  - pylintrc
+  - setup.py
+  - src/tic_tac_toe_backends/__init__.py
+  - src/tic_tac_toe_backends/utils/__init__.py
+  - src/tic_tac_toe_backends/utils/retries.py
+  - src/tic_tac_toe_backends/utils/utils.py
+  - src/tic_tac_toe_backends/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/tic_tac_toe_backends/models/operations/get_.py
+  - src/tic_tac_toe_backends/models/operations/get_version.py
+  - src/tic_tac_toe_backends/models/operations/put_games.py
+  - src/tic_tac_toe_backends/models/shared/version.py
+  - src/tic_tac_toe_backends/models/shared/move.py
+  - src/tic_tac_toe_backends/models/shared/moveparameter.py
+  - src/tic_tac_toe_backends/models/__init__.py
+  - src/tic_tac_toe_backends/models/errors/__init__.py
+  - src/tic_tac_toe_backends/models/operations/__init__.py
+  - src/tic_tac_toe_backends/models/shared/__init__.py
+  - docs/models/operations/getresponse.md
+  - docs/models/operations/getversionresponse.md
+  - docs/models/operations/putgamesresponse.md
+  - docs/models/shared/version.md
+  - docs/models/shared/currentmark.md
+  - docs/models/shared/grid.md
+  - docs/models/shared/movegrid.md
+  - docs/models/shared/moveschemasstartingmark.md
+  - docs/models/shared/moveafterstate.md
+  - docs/models/shared/moveschemasgrid.md
+  - docs/models/shared/movestartingmark.md
+  - docs/models/shared/beforestate.md
+  - docs/models/shared/mark.md
+  - docs/models/shared/possiblemoves.md
+  - docs/models/shared/startingmark.md
+  - docs/models/shared/winner.md
+  - docs/models/shared/afterstate.md
+  - docs/models/shared/move.md
+  - docs/models/shared/moveparametermove.md
+  - docs/models/shared/moveparameter.md
+  - docs/sdks/tictactoebackends/README.md
+  - USAGE.md
+  - .gitattributes
