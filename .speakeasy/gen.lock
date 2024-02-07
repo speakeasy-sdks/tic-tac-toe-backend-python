@@ -4,16 +4,16 @@ management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.248.1
-  releaseVersion: 4.0.0
-  configChecksum: 3cad1e021c6530a14c6cb38513dc3951
+  generationVersion: 2.250.12
+  releaseVersion: 5.0.0
+  configChecksum: 2b3eb91a25d49f766e2f66564825ed6b
   repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-python.git
   published: true
 features:
   python:
-    core: 4.4.4
+    core: 4.4.5
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/tic_tac_toe_backends/sdkconfiguration.py
