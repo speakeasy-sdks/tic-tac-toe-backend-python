@@ -56,6 +56,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import tic_tac_toe_backends
+from tic_tac_toe_backends.models import errors
 
 s = tic_tac_toe_backends.TicTacToeBackends()
 
@@ -64,7 +65,7 @@ res = None
 try:
     res = s.get_()
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.body is not None:

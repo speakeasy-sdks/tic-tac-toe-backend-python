@@ -77,7 +77,6 @@ if res.body is not None:
 
 ```python
 import tic_tac_toe_backends
-from tic_tac_toe_backends.models import shared
 
 s = tic_tac_toe_backends.TicTacToeBackends()
 
