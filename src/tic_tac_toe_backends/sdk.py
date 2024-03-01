@@ -3,6 +3,7 @@
 import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from tic_tac_toe_backends import utils
+from tic_tac_toe_backends._hooks import HookContext, SDKHooks
 from tic_tac_toe_backends.models import errors, operations
 from typing import Dict
 
@@ -39,6 +40,16 @@ class TicTacToeBackends:
                 server_url = utils.template_url(server_url, url_params)
 
         self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, retry_config=retry_config)
+
+        hooks = SDKHooks()
+
+        current_server_url, *_ = self.sdk_configuration.get_server_details()
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        if current_server_url != server_url:
+            self.sdk_configuration.server_url = server_url
+
+        # pylint: disable=protected-access
+        self.sdk_configuration._hooks=hooks
        
         
     
@@ -49,6 +60,7 @@ class TicTacToeBackends:
         r"""Root endpoint.
         <br/>Returns the package name and version.<br/><br/>
         """
+        hook_ctx = HookContext(operation_id='get_/', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/'
@@ -58,7 +70,27 @@ class TicTacToeBackends:
         
         client = self.sdk_configuration.client
         
-        http_res = client.request('GET', url, headers=headers)
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('GET', url, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.GetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -79,6 +111,7 @@ class TicTacToeBackends:
         r"""Root endpoint.
         <br/>Returns the package name and version.<br/><br/>
         """
+        hook_ctx = HookContext(operation_id='get_/version', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/version'
@@ -88,7 +121,27 @@ class TicTacToeBackends:
         
         client = self.sdk_configuration.client
         
-        http_res = client.request('GET', url, headers=headers)
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('GET', url, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.GetVersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -109,12 +162,13 @@ class TicTacToeBackends:
         r"""Games endpoint. Creates the next game state from the previous game state.
         <br/>Accepts a GameState and Move.<br/><br/>Returns a Move including the before and after GameStates.<br/>
         """
+        hook_ctx = HookContext(operation_id='put_/games', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/games'
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, bytes, "request", False, False, 'raw')
-        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
@@ -123,7 +177,27 @@ class TicTacToeBackends:
         
         client = self.sdk_configuration.client
         
-        http_res = client.request('PUT', url, data=data, files=form, headers=headers)
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('PUT', url, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.PutGamesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
