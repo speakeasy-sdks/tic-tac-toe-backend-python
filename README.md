@@ -24,6 +24,7 @@ res = s.get_()
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -71,6 +72,7 @@ except errors.SDKError as e:
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -103,6 +105,7 @@ res = s.get_()
 if res.body is not None:
     # handle response
     pass
+
 ```
 
 
@@ -122,6 +125,7 @@ res = s.get_()
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 

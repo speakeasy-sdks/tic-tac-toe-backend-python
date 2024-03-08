@@ -561,3 +561,13 @@ Based on:
 - [python v5.1.0] .
 ### Releases
 - [PyPI v5.1.0] https://pypi.org/project/tic-tac-toe-backend/5.1.0 - .
+
+## 2024-03-08 01:06:20
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.204.1 (2.279.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v5.2.0] .
+### Releases
+- [PyPI v5.2.0] https://pypi.org/project/tic-tac-toe-backend/5.2.0 - .

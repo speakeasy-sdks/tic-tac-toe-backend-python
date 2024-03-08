@@ -28,6 +28,7 @@ res = s.get_()
 if res.body is not None:
     # handle response
     pass
+
 ```
 
 
@@ -57,6 +58,7 @@ res = s.get_version()
 if res.body is not None:
     # handle response
     pass
+
 ```
 
 
@@ -87,6 +89,7 @@ res = s.put_games(req)
 if res.body is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

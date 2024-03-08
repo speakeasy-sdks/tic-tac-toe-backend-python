@@ -10,5 +10,6 @@ res = s.get_()
 if res.body is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
