@@ -5,7 +5,7 @@ from .sdkconfiguration import SDKConfiguration
 from tic_tac_toe_backends import utils
 from tic_tac_toe_backends._hooks import HookContext, SDKHooks
 from tic_tac_toe_backends.models import errors, operations
-from typing import Dict
+from typing import Dict, Optional
 
 class TicTacToeBackends:
     r"""Game Engine API for Tic Tac Toe: Game Engine API for Tic Tac Toe"""
@@ -13,14 +13,14 @@ class TicTacToeBackends:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 server_idx: int = None,
-                 server_url: str = None,
-                 url_params: Dict[str, str] = None,
-                 client: requests_http.Session = None,
-                 retry_config: utils.RetryConfig = None
+                 server_idx: Optional[int] = None,
+                 server_url: Optional[str] = None,
+                 url_params: Optional[Dict[str, str]] = None,
+                 client: Optional[requests_http.Session] = None,
+                 retry_config: Optional[utils.RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-        
+
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -34,12 +34,17 @@ class TicTacToeBackends:
         """
         if client is None:
             client = requests_http.Session()
-        
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(
+            client,
+            server_url,
+            server_idx,
+            retry_config=retry_config
+        )
 
         hooks = SDKHooks()
 
@@ -49,13 +54,9 @@ class TicTacToeBackends:
             self.sdk_configuration.server_url = server_url
 
         # pylint: disable=protected-access
-        self.sdk_configuration._hooks=hooks
-       
-        
-    
-    
-    
-    
+        self.sdk_configuration._hooks = hooks
+
+
     def get_(self) -> operations.GetResponse:
         r"""Root endpoint.
         <br/>Returns the package name and version.<br/><br/>
@@ -107,8 +108,8 @@ class TicTacToeBackends:
 
         return res
 
-    
-    
+
+
     def get_version(self) -> operations.GetVersionResponse:
         r"""Root endpoint.
         <br/>Returns the package name and version.<br/><br/>
@@ -160,8 +161,8 @@ class TicTacToeBackends:
 
         return res
 
-    
-    
+
+
     def put_games(self, request: bytes) -> operations.PutGamesResponse:
         r"""Games endpoint. Creates the next game state from the previous game state.
         <br/>Accepts a GameState and Move.<br/><br/>Returns a Move including the before and after GameStates.<br/>
@@ -218,4 +219,3 @@ class TicTacToeBackends:
 
         return res
 
-    
